@@ -16,3 +16,4 @@ func _on_Game_timeout() -> void:
 
 func change_weapon(weapon: PackedScene, position: int) -> void:
     pass
+
