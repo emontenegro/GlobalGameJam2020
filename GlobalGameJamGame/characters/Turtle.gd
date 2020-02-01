@@ -27,6 +27,8 @@ func hide_all_weapon():
 func _change_weapon(weapon: String, player: int) -> void:
     hide_all_weapon()
     if player == self.player:
-        get_node("ArmR/weapon"+"/"+weapon).show()
+        if weapon != '':
+            get_node("ArmR/weapon"+"/"+weapon).show()
+        
     pass
 

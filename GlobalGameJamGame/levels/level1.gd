@@ -16,6 +16,12 @@ signal p2w2c
 signal p2w3c
 signal p2stop
 
+signal p1damage
+signal p2damage
+
+signal p1wchanged
+signal p2wchanged
+
 func _ready():
     pass
 
@@ -32,12 +38,15 @@ func _input(event):
         emit_signal('p1w3r')
     if event.is_action_pressed('p1w1c'):
         emit_signal("p1stop")
+        emit_signal("p1wchanged")
         emit_signal('p1w1c')
     if event.is_action_pressed('p1w2c'):
         emit_signal("p1stop")
+        emit_signal("p1wchanged")
         emit_signal('p1w2c')
     if event.is_action_pressed('p1w3c'):
         emit_signal("p1stop")
+        emit_signal("p1wchanged")
         emit_signal('p1w3c')
 
     if event.is_action_pressed('p2w1r'):
@@ -51,10 +60,19 @@ func _input(event):
         emit_signal('p2w3r')
     if event.is_action_pressed('p2w1c'):
         emit_signal("p2stop")
+        emit_signal("p2wchanged")
         emit_signal('p2w1c')
     if event.is_action_pressed('p2w2c'):
         emit_signal("p2stop")
+        emit_signal("p2wchanged")
         emit_signal('p2w2c')
     if event.is_action_pressed('p2w3c'):
         emit_signal("p2stop")
+        emit_signal("p2wchanged")
         emit_signal('p2w3c')
+
+
+func _on_GameTimer_timeout():
+    emit_signal("p1damage", 10)
+    emit_signal("p2damage", 10)
+    pass
