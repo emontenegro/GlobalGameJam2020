@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/test_images/barHorizontal_green_mid 200.png" type="Texture" id=1]
+[ext_resource path="res://assets/test_images/rect_blue.png" type="Texture" id=2]
+[ext_resource path="res://weapons/WeaponButtonBase.gd" type="Script" id=3]
+
+[node name="WeaponButtonBase" type="Button"]
+margin_right = 250.0
+margin_bottom = 250.0
+rect_min_size = Vector2( 250, 250 )
+flat = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+Repair_Timeout = 20
+WeaponName = "Hammer"
+
+[node name="Texture" type="TextureRect" parent="."]
+show_behind_parent = true
+margin_right = 250.0
+margin_bottom = 250.0
+rect_min_size = Vector2( 250, 250 )
+texture = ExtResource( 2 )
+stretch_mode = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthProgress" type="TextureProgress" parent="Texture"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -100.0
+margin_top = -34.0
+margin_right = 100.0
+margin_bottom = -8.0
+value = 50.0
+texture_progress = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="TimerRepair" type="Timer" parent="."]
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="timeout" from="Timer" to="." method="_on_timeout"]
+[connection signal="timeout" from="TimerRepair" to="." method="_on_TimerRepair_timeout"]
