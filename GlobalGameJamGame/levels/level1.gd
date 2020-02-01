@@ -19,14 +19,6 @@ signal p2stop
 func _ready():
     pass
 
-#func _physics_process(delta):
-##    print('physics_process: in')
-#
-#    if Input.is_action_pressed("p1w1"):
-#        emit_signal('p1w1_p')
-#    if Input.is_action_pressed("p1w2"):
-#        emit_signal("p1w2_p")
-
 
 func _input(event):
     if event.is_action_pressed('p1w1r'):
