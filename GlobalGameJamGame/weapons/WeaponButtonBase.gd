@@ -27,6 +27,7 @@ func _ready():
     current_health = 20
     $Texture/HealthProgress.value = current_health
 
+
 func _on_repair():
     if $Timer.is_stopped():
         is_repearing = true
@@ -39,6 +40,7 @@ func _on_timeout():
     if !is_destroyed:
         do_repair()
     pass
+
 
 func do_repair() -> void:
     var new_health = current_health + Repair_Timeout
@@ -53,6 +55,7 @@ func _on_change():
         is_active =  true
         emit_signal("change_weapon", WeaponName, Player) 
         print_debug('Change Weapon: '+ str(WeaponName) +' Curr: '+ str(current_health))
+
 
 func _on_stop_repair():
     stop_repair()

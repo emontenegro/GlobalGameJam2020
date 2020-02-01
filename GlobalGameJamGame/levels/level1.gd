@@ -23,6 +23,7 @@ signal p1wchanged
 signal p2wchanged
 
 func _ready():
+    $GameTimer.start()
     pass
 
 
@@ -76,3 +77,9 @@ func _on_GameTimer_timeout():
     emit_signal("p1damage", 10)
     emit_signal("p2damage", 10)
     pass
+
+
+func _on_Player1_player_dies():
+    print("A player died!")
+    $GameTimer.stop()
+    pass # Replace with function body.
