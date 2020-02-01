@@ -4,8 +4,15 @@
 [ext_resource path="res://ui_elements/NewGameButton.gd" type="Script" id=2]
 
 [node name="NewGameButton" instance=ExtResource( 1 )]
+margin_right = 310.0
+margin_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 310, 60 )
 script = ExtResource( 2 )
 
 [node name="Label" parent="." index="0"]
+margin_right = 0.0
+margin_bottom = 0.0
 text = "New Game"
 align = 1

@@ -23,11 +23,13 @@ signal p1wchanged
 signal p2wchanged
 
 func _ready():
-    $GameTimer.start()
     $Arena/Player1.connect("player_dies", self, '_end_game')
     $Arena/Player2.connect("player_dies", self, '_end_game')
+    $AnimationPlayer.play("Start_Game")
     pass
 
+func start_game():
+    $GameTimer.start()
 
 func _input(event):
     if event.is_action_pressed('p1w1r'):

@@ -4,7 +4,7 @@
 [ext_resource path="res://ui_elements/MenuButton.gd" type="Script" id=2]
 
 [sub_resource type="DynamicFont" id=1]
-size = 48
+size = 50
 font_data = ExtResource( 1 )
 
 [node name="MenuButton" type="Button"]
