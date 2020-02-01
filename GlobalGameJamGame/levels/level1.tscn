@@ -24,16 +24,16 @@ WeaponName = "Sword"
 [node name="WeaponBat" parent="PlayerOneToolbox" instance=ExtResource( 1 )]
 margin_top = 415.0
 margin_bottom = 665.0
+Weapon = 2
 Repair_Timeout = 15
 WeaponName = "Bat"
-Weapon = 2
 
 [node name="WeaponPunch" parent="PlayerOneToolbox" instance=ExtResource( 1 )]
 margin_top = 669.0
 margin_bottom = 919.0
+Weapon = 3
 Repair_Timeout = 30
 WeaponName = "Punch"
-Weapon = 3
 
 [node name="PlayerTwoToolbox" type="VBoxContainer" parent="."]
 margin_left = 1670.0
@@ -47,25 +47,25 @@ __meta__ = {
 [node name="WeaponSword" parent="PlayerTwoToolbox" instance=ExtResource( 1 )]
 margin_top = 161.0
 margin_bottom = 411.0
+Player = 2
 Repair_Timeout = 5
 WeaponName = "Sword"
-Player = 2
 
 [node name="WeaponBat" parent="PlayerTwoToolbox" instance=ExtResource( 1 )]
 margin_top = 415.0
 margin_bottom = 665.0
-Repair_Timeout = 15
-WeaponName = "Bat"
 Player = 2
 Weapon = 2
+Repair_Timeout = 15
+WeaponName = "Bat"
 
 [node name="WeaponPunch" parent="PlayerTwoToolbox" instance=ExtResource( 1 )]
 margin_top = 669.0
 margin_bottom = 919.0
-Repair_Timeout = 30
-WeaponName = "Punch"
 Player = 2
 Weapon = 3
+Repair_Timeout = 30
+WeaponName = "Punch"
 
 [node name="Arena" type="Node2D" parent="."]
 position = Vector2( 260, 0 )

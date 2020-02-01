@@ -31,24 +31,9 @@ func _on_repair():
         $Timer.start()
     pass
 
-func _on_action_released():
-    if !$Timer.is_stopped():
-        $'Timer'.stop()
-        
-    if !$TimerRepair.is_stopped():
-        $'TimerRepair'.stop()    
-
-    if (!released):
-        released = false
-        $TimerRepair.start()
+func _on_timeout():
+    do_repair()
     pass
-    
-func _on_stop_repair():
-    if !$Timer.is_stopped():
-        $'Timer'.stop()
-        
-    if !$TimerRepair.is_stopped():
-        $'TimerRepair'.stop()   
 
 func do_repair() -> void:
     var new_health = current_health + Repair_Timeout
@@ -57,40 +42,15 @@ func do_repair() -> void:
     emit_signal("repair_weapon", WeaponName, current_health, Player)
     print_debug('Repair Weapon: '+ str(WeaponName) +' Curr: '+ str(current_health))
 
-func _on_button_down():
+func _on_change():
+    stop_repair()
+    emit_signal("change_weapon", WeaponName, Player) 
+    print_debug('Change Weapon: '+ str(WeaponName) +' Curr: '+ str(current_health))
+
+func _on_stop_repair():
+    stop_repair()
+
+func stop_repair():
+    is_repearing = false
     if !$Timer.is_stopped():
         $'Timer'.stop()
-        
-    if !$TimerRepair.is_stopped():
-        $'TimerRepair'.stop()   
-         
-    $'Timer'.start()
-    released = false
-    pass
-    
-func _on_timeout():
-    released =  true
-    _change_weapon()
-    pass
-
-func _change_weapon():
-    emit_signal("change_weapon", WeaponName, Player)
-    print_debug('Change Weapon')
-    pass
-
-func _on_button_up():
-    if !$Timer.is_stopped():
-        $'Timer'.stop()
-        
-    if !$TimerRepair.is_stopped():
-        $'TimerRepair'.stop()    
-
-    if (!released):
-        released = false
-        $TimerRepair.start()
-    pass
-
-
-func _on_TimerRepair_timeout():
-    do_repair()
-    pass

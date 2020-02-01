@@ -30,39 +30,39 @@ func _ready():
 
 func _input(event):
     if event.is_action_pressed('p1w1r'):
+        emit_signal("p1stop")
         emit_signal('p1w1r')
-        emit_signal("p1stop")
     if event.is_action_pressed('p1w2r'):
+        emit_signal("p1stop")
         emit_signal('p1w2r')
-        emit_signal("p1stop")
     if event.is_action_pressed('p1w3r'):
+        emit_signal("p1stop")
         emit_signal('p1w3r')
-        emit_signal("p1stop")
     if event.is_action_pressed('p1w1c'):
+        emit_signal("p1stop")
         emit_signal('p1w1c')
-        emit_signal("p1stop")
     if event.is_action_pressed('p1w2c'):
+        emit_signal("p1stop")
         emit_signal('p1w2c')
-        emit_signal("p1stop")
     if event.is_action_pressed('p1w3c'):
-        emit_signal('p1w3c')
         emit_signal("p1stop")
+        emit_signal('p1w3c')
 
     if event.is_action_pressed('p2w1r'):
+        emit_signal("p2stop")
         emit_signal('p2w1r')
-        emit_signal("p2stop")
     if event.is_action_pressed('p2w2r'):
+        emit_signal("p2stop")
         emit_signal('p2w2r')
-        emit_signal("p2stop")
     if event.is_action_pressed('p2w3r'):
+        emit_signal("p2stop")
         emit_signal('p2w3r')
-        emit_signal("p2stop")
     if event.is_action_pressed('p2w1c'):
+        emit_signal("p2stop")
         emit_signal('p2w1c')
-        emit_signal("p2stop")
     if event.is_action_pressed('p2w2c'):
+        emit_signal("p2stop")
         emit_signal('p2w2c')
-        emit_signal("p2stop")
     if event.is_action_pressed('p2w3c'):
-        emit_signal('p2w3c')
         emit_signal("p2stop")
+        emit_signal('p2w3c')
