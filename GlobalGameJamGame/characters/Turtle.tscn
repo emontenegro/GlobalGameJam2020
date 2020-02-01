@@ -79,12 +79,12 @@ shape = SubResource( 3 )
 frames = SubResource( 1 )
 
 [node name="weapon_left" type="AnimatedSprite" parent="."]
-position = Vector2( 18.7814, -10.4265 )
+position = Vector2( 5, -15.25 )
 frames = SubResource( 1 )
 frame = 2
 
 [node name="weapon_right" type="AnimatedSprite" parent="."]
-position = Vector2( 3.78144, 15.1093 )
+position = Vector2( 20, 7 )
 frames = SubResource( 1 )
 frame = 2
 

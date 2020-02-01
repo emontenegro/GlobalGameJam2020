@@ -67,13 +67,13 @@ __meta__ = {
 [node name="Arena" type="Node2D" parent="."]
 position = Vector2( 260, 0 )
 
-[node name="KinematicBody2D" parent="Arena" instance=ExtResource( 2 )]
+[node name="Player1" parent="Arena" instance=ExtResource( 2 )]
 position = Vector2( 299.484, 556.117 )
 scale = Vector2( 15, 15 )
 
-[node name="KinematicBody2D2" parent="Arena" instance=ExtResource( 2 )]
+[node name="Player2" parent="Arena" instance=ExtResource( 2 )]
 position = Vector2( 989.288, 611.503 )
 rotation = 3.14159
 scale = Vector2( 15, 15 )
 
-[node name="Timer" type="Timer" parent="."]
+[node name="GameTimer" type="Timer" parent="."]
