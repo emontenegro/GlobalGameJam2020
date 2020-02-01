@@ -11,6 +11,7 @@ var current_health: int
 func _ready():
     current_health = 100
     game_timer.connect('timeout', self, '_on_Game_timeout')
+    owner.connect('p'+str(player)+'damage', self, '_on_Level1_player_hit')
     if player == 1:
         for state_node in owner.get_node('PlayerOneToolbox').get_children():
             state_node.connect("change_weapon", self, "_change_weapon")
@@ -38,9 +39,10 @@ func _change_weapon(weapon: String, player: int) -> void:
     pass
 
 
-func _on_Level1_player_hit():
-    current_health = current_health - 10
+func _on_Level1_player_hit(damage: int):
+    current_health = current_health - damage
+    current_health = clamp(current_health, 0, 100)
     print(current_health)
     if current_health <= 0:
-        emit_signal("player_dies")
-    pass # Replace with function body.
+        emit_signal("player_dies", player)
+    pass

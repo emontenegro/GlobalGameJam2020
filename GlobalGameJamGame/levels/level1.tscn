@@ -18,21 +18,21 @@ __meta__ = {
 [node name="WeaponSword" parent="PlayerOneToolbox" instance=ExtResource( 1 )]
 margin_top = 161.0
 margin_bottom = 411.0
-Repair_Timeout = 6
+Repair_Timeout = 5
 WeaponName = "WeaponSword"
 
 [node name="WeaponBat" parent="PlayerOneToolbox" instance=ExtResource( 1 )]
 margin_top = 415.0
 margin_bottom = 665.0
 Weapon = 2
-Repair_Timeout = 10
+Repair_Timeout = 15
 WeaponName = "WeaponBat"
 
 [node name="WeaponPunch" parent="PlayerOneToolbox" instance=ExtResource( 1 )]
 margin_top = 669.0
 margin_bottom = 919.0
 Weapon = 3
-Repair_Timeout = 12
+Repair_Timeout = 30
 WeaponName = "WeaponPunch"
 
 [node name="PlayerTwoToolbox" type="VBoxContainer" parent="."]
@@ -48,7 +48,7 @@ __meta__ = {
 margin_top = 161.0
 margin_bottom = 411.0
 Player = 2
-Repair_Timeout = 6
+Repair_Timeout = 5
 WeaponName = "WeaponSword"
 
 [node name="WeaponBat" parent="PlayerTwoToolbox" instance=ExtResource( 1 )]
@@ -56,7 +56,7 @@ margin_top = 415.0
 margin_bottom = 665.0
 Player = 2
 Weapon = 2
-Repair_Timeout = 10
+Repair_Timeout = 15
 WeaponName = "WeaponBat"
 
 [node name="WeaponPunch" parent="PlayerTwoToolbox" instance=ExtResource( 1 )]
@@ -64,7 +64,7 @@ margin_top = 669.0
 margin_bottom = 919.0
 Player = 2
 Weapon = 3
-Repair_Timeout = 12
+Repair_Timeout = 30
 WeaponName = "WeaponPunch"
 
 [node name="Arena" type="Node2D" parent="."]
@@ -85,8 +85,4 @@ player = 2
 autostart = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-
-[connection signal="player_hit" from="." to="Arena/Player2" method="_on_Level1_player_hit"]
-[connection signal="player_hit" from="." to="Arena/Player1" method="_on_Level1_player_hit"]
-[connection signal="player_dies" from="Arena/Player1" to="." method="_on_Player1_player_dies"]
 [connection signal="timeout" from="GameTimer" to="." method="_on_GameTimer_timeout"]

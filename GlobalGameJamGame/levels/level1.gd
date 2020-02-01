@@ -24,6 +24,8 @@ signal p2wchanged
 
 func _ready():
     $GameTimer.start()
+    $Arena/Player1.connect("player_dies", self, '_end_game')
+    $Arena/Player2.connect("player_dies", self, '_end_game')
     pass
 
 
@@ -78,8 +80,6 @@ func _on_GameTimer_timeout():
     emit_signal("p2damage", 10)
     pass
 
-
-func _on_Player1_player_dies():
-    print("A player died!")
+func _end_game(player: int):
     $GameTimer.stop()
-    pass # Replace with function body.
+    print('player: '+str(player)+' died.')
