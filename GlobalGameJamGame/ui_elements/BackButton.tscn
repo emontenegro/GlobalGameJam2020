@@ -7,4 +7,12 @@ margin_right = 509.0
 margin_bottom = 67.0
 
 [node name="Label" parent="." index="0"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -136.0
+margin_top = -24.0
+margin_right = 136.0
+margin_bottom = 24.0
 text = "Go to Main Menu"
