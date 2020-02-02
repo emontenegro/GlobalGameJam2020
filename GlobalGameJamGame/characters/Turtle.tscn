@@ -21,8 +21,8 @@
 [ext_resource path="res://assets/Thead_1.png" type="Texture" id=19]
 [ext_resource path="res://characters/Tanim_defeat.tres" type="Animation" id=20]
 [ext_resource path="res://characters/Tanim_born.tres" type="Animation" id=21]
-[ext_resource path="res://Assets/Tarm_1.png" type="Texture" id=22]
-[ext_resource path="res://Assets/Thead_2.png" type="Texture" id=23]
+[ext_resource path="res://assets/Tarm_1.png" type="Texture" id=22]
+[ext_resource path="res://assets/Thead_2.png" type="Texture" id=23]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 261.041, 279.317 )

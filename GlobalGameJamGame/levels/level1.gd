@@ -106,4 +106,6 @@ func _end_game(player: int):
         $Arena/BloodT2.visible = true
         $Arena/Player2.visible = false
     $AnimationPlayer.play("GaviotaVa")
+    yield($AnimationPlayer, "animation_finished")
+    $CanvasLayer/CenterContainer2/TextureButton.visible = true
     print('player: '+str(player)+' died.')
