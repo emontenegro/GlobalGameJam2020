@@ -7,7 +7,7 @@
 [ext_resource path="res://assets/sprites/arena.png" type="Texture" id=6]
 [ext_resource path="res://assets/sprites/Gaviota.png" type="Texture" id=7]
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=1]
 resource_name = "Gaviota"
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("CanvasLayer3/Sprite:rect_size:x")
@@ -50,8 +50,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 0.5, 1 )
 }
 
-[sub_resource type="Animation" id=1]
-resource_name = "Start_Game"
+[sub_resource type="Animation" id=2]
 tracks/0/type = "method"
 tracks/0/path = NodePath(".")
 tracks/0/interp = 1
@@ -115,19 +114,19 @@ tracks/4/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 0.647059, 0.65098, 0.12549, 1 ), Color( 0.807843, 0.0823529, 0.0823529, 1 ) ]
 }
 
-[sub_resource type="DynamicFontData" id=4]
+[sub_resource type="DynamicFontData" id=3]
 font_path = "res://assets/fonts/Praetorium.TTF"
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=4]
 size = 500
-font_data = SubResource( 4 )
+font_data = SubResource( 3 )
 
-[sub_resource type="DynamicFontData" id=6]
+[sub_resource type="DynamicFontData" id=5]
 font_path = "res://assets/fonts/Praetorium.TTF"
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=6]
 size = 500
-font_data = SubResource( 6 )
+font_data = SubResource( 5 )
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 3 )
@@ -254,27 +253,25 @@ WeaponName = "W1"
 position = Vector2( 260, 0 )
 
 [node name="Player1" parent="Arena" instance=ExtResource( 2 )]
-position = Vector2( 300, 550 )
+position = Vector2( 299.484, 556.117 )
 rotation = 1.5708
 player = 1
 
 [node name="Player2" parent="Arena" instance=ExtResource( 2 )]
-position = Vector2( 975, 625 )
+position = Vector2( 989.288, 611.503 )
 rotation = -1.5708
 player = 2
 
 [node name="HealthBar" parent="Arena/Player2" index="1"]
-margin_left = 369.0
-margin_top = 250.0
-margin_right = 569.0
-margin_bottom = 276.0
+margin_left = 365.0
+margin_right = 565.0
 
 [node name="GameTimer" type="Timer" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 0.3
-anims/Gaviota = SubResource( 3 )
-anims/Start_Game = SubResource( 1 )
+anims/Gaviota = SubResource( 1 )
+anims/Start_Game = SubResource( 2 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -283,9 +280,7 @@ anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -558.0
-margin_top = 97.0
-margin_right = 550.0
-margin_bottom = -99.0
+margin_right = 558.0
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -299,7 +294,7 @@ margin_right = 1042.0
 margin_bottom = 776.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color_shadow = Color( 0.74902, 0.623529, 0.054902, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 5
@@ -312,13 +307,13 @@ __meta__ = {
 
 [node name="Fight" type="Label" parent="CanvasLayer/CenterContainer"]
 self_modulate = Color( 0.807843, 0.0823529, 0.0823529, 1 )
-margin_left = 555.0
-margin_top = 539.0
-margin_right = 560.0
-margin_bottom = 541.0
+margin_left = 143.0
+margin_top = 304.0
+margin_right = 973.0
+margin_bottom = 776.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color_shadow = Color( 0.74902, 0.623529, 0.054902, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 5
@@ -330,7 +325,6 @@ __meta__ = {
 }
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-volume_db = 24.0
 script = ExtResource( 5 )
 [connection signal="timeout" from="GameTimer" to="." method="_on_GameTimer_timeout"]
 

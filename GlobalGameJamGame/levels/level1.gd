@@ -89,5 +89,7 @@ func _on_GameTimer_timeout():
 
 func _end_game(player: int):
     emit_signal("endgame")
+    $AudioStreamPlayer2D.stop_music()
+    $AudioStreamPlayer2D.play_trumpets()
     $GameTimer.stop()
     print('player: '+str(player)+' died.')
