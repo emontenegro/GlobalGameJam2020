@@ -1,8 +1,11 @@
+tool
 extends Button
 
 signal change_weapon
 signal repair_weapon
 
+export (String) var sprite_wapon = '' setget set_image_w, get_image_w
+export (String) var sprite_weapon = ''
 export (int) var Player = 1
 export (int) var Weapon = 1
 export (int) var Repair = 0
@@ -56,7 +59,7 @@ func _on_change():
         is_active =  true
         emit_signal("change_weapon", WeaponName, Player, Damage) 
         print_debug('Change Weapon: '+ str(WeaponName) +' Curr: '+ str(current_health))
-
+        
 
 func _on_stop_repair():
     stop_repair()
@@ -77,3 +80,12 @@ func _on_take_damage(damage: int):
         if current_health == 0:
             is_destroyed = true
             emit_signal("change_weapon", '', Player, 1) 
+
+func set_image_w(tex: String):
+    $Texture.texture = load(tex)
+
+func get_image_w():
+    if $Texture.texture:
+        return $Texture.texture.resource_path
+    else:
+        return ''
