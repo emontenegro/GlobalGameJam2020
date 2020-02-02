@@ -385,3 +385,5 @@ autoplay = "idle"
 anims/Attack = SubResource( 4 )
 anims/SwapWeapon = SubResource( 5 )
 anims/idle = ExtResource( 5 )
+
+[node name="Tween" type="Tween" parent="."]
