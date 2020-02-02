@@ -163,18 +163,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayerOneToolbox" type="VBoxContainer" parent="."]
-margin_right = 250.0
-margin_bottom = 1080.0
+[node name="PlayerOneToolbox" type="HBoxContainer" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 827.631
+margin_right = 758.0
+margin_bottom = 1077.63
 alignment = 1
 __meta__ = {
-"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="WeaponSword" parent="PlayerOneToolbox" instance=ExtResource( 1 )]
-margin_top = 161.0
-margin_bottom = 411.0
 sprite_wapon = "res://assets/sprites/B_WEAPON_3.png"
 sprite_weapon_selected = "res://assets/sprites/B_WEAPON_3b.png"
 Repair = 8
@@ -183,8 +184,8 @@ Spoil = 16
 WeaponName = "W3"
 
 [node name="WeaponBat" parent="PlayerOneToolbox" instance=ExtResource( 1 )]
-margin_top = 415.0
-margin_bottom = 665.0
+margin_left = 254.0
+margin_right = 504.0
 sprite_wapon = "res://assets/sprites/B_WEAPON_2.png"
 sprite_weapon_selected = "res://assets/sprites/B_WEAPON_2b.png"
 Weapon = 2
@@ -194,8 +195,8 @@ Spoil = 12
 WeaponName = "W2"
 
 [node name="WeaponPunch" parent="PlayerOneToolbox" instance=ExtResource( 1 )]
-margin_top = 669.0
-margin_bottom = 919.0
+margin_left = 508.0
+margin_right = 758.0
 sprite_wapon = "res://assets/sprites/B_WEAPON_1.png"
 sprite_weapon_selected = "res://assets/sprites/B_WEAPON_1b.png"
 Weapon = 3
@@ -204,19 +205,20 @@ Damage = 3
 Spoil = 8
 WeaponName = "W1"
 
-[node name="PlayerTwoToolbox" type="VBoxContainer" parent="."]
-margin_left = 1670.0
-margin_right = 1920.0
-margin_bottom = 1080.0
+[node name="PlayerTwoToolbox" type="HBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1153.55
+margin_top = 825.107
+margin_right = 1911.55
+margin_bottom = 1075.11
 alignment = 1
 __meta__ = {
-"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="WeaponSword" parent="PlayerTwoToolbox" instance=ExtResource( 1 )]
-margin_top = 161.0
-margin_bottom = 411.0
 sprite_wapon = "res://assets/sprites/B_WEAPON_3.png"
 sprite_weapon_selected = "res://assets/sprites/B_WEAPON_3b.png"
 Player = 2
@@ -226,8 +228,8 @@ Spoil = 16
 WeaponName = "W3"
 
 [node name="WeaponBat" parent="PlayerTwoToolbox" instance=ExtResource( 1 )]
-margin_top = 415.0
-margin_bottom = 665.0
+margin_left = 254.0
+margin_right = 504.0
 sprite_wapon = "res://assets/sprites/B_WEAPON_2.png"
 sprite_weapon_selected = "res://assets/sprites/B_WEAPON_2b.png"
 Player = 2
@@ -238,8 +240,8 @@ Spoil = 12
 WeaponName = "W2"
 
 [node name="WeaponPunch" parent="PlayerTwoToolbox" instance=ExtResource( 1 )]
-margin_top = 669.0
-margin_bottom = 919.0
+margin_left = 508.0
+margin_right = 758.0
 sprite_wapon = "res://assets/sprites/B_WEAPON_1.png"
 sprite_weapon_selected = "res://assets/sprites/B_WEAPON_1b.png"
 Player = 2
@@ -253,18 +255,18 @@ WeaponName = "W1"
 position = Vector2( 260, 0 )
 
 [node name="Player1" parent="Arena" instance=ExtResource( 2 )]
-position = Vector2( 299.484, 556.117 )
+position = Vector2( 299.484, 500 )
 rotation = 1.5708
 player = 1
 
 [node name="Player2" parent="Arena" instance=ExtResource( 2 )]
-position = Vector2( 989.288, 611.503 )
+position = Vector2( 989.288, 500 )
 rotation = -1.5708
 player = 2
 
 [node name="HealthBar" parent="Arena/Player2" index="1"]
-margin_left = 365.0
-margin_right = 565.0
+margin_left = 310.0
+margin_right = 510.0
 
 [node name="GameTimer" type="Timer" parent="."]
 
@@ -287,6 +289,7 @@ __meta__ = {
 }
 
 [node name="Ready" type="Label" parent="CanvasLayer/CenterContainer"]
+visible = false
 self_modulate = Color( 0.184314, 0.819608, 0.0509804, 1 )
 margin_left = 74.0
 margin_top = 304.0
@@ -306,6 +309,7 @@ __meta__ = {
 }
 
 [node name="Fight" type="Label" parent="CanvasLayer/CenterContainer"]
+visible = false
 self_modulate = Color( 0.807843, 0.0823529, 0.0823529, 1 )
 margin_left = 143.0
 margin_top = 304.0
