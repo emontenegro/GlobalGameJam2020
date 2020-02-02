@@ -89,7 +89,21 @@ func _on_GameTimer_timeout():
 
 func _end_game(player: int):
     emit_signal("endgame")
+    $GameTimer.stop()
     $AudioStreamPlayer2D.stop_music()
     $AudioStreamPlayer2D.play_trumpets()
-    $GameTimer.stop()
+    yield($AudioStreamPlayer2D, "finished")
+    $CanvasLayer/Cesar.visible = true
+    $CanvasLayer/Cesar/Cesar/AnimationPlayer.play("PulgarAbajo")
+    yield($CanvasLayer/Cesar/Cesar/AnimationPlayer, "animation_finished")
+    $CanvasLayer/Cesar.visible = false
+    $AnimationPlayer.play("Gaviota")
+    yield($AnimationPlayer, "animation_finished")
+    if player == 1:
+        $Arena/BloodT1.visible = true
+        $Arena/Player1.visible = false
+    else:
+        $Arena/BloodT2.visible = true
+        $Arena/Player2.visible = false
+    $AnimationPlayer.play("GaviotaVa")
     print('player: '+str(player)+' died.')

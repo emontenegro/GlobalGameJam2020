@@ -24,7 +24,6 @@ func _ready():
     if player == 2:
         for state_node in owner.get_node('PlayerTwoToolbox').get_children():
             state_node.connect("change_weapon", self, "_change_weapon")
-            
     hide_all_weapon()
     pass
     
@@ -62,4 +61,5 @@ func _on_Level1_player_hit(damage: int):
     $Tween.start()
     if current_health <= 0:
         emit_signal("player_dies", player)
+        $Body/AnimationPlayer.play("Tanim_defeat")
     pass
