@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/fonts/Montserrat-ExtraBold.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://levels/AudioManager.gd" type="Script" id=5]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=2]
 resource_name = "Start_Game"
 tracks/0/type = "method"
 tracks/0/path = NodePath(".")
@@ -71,14 +71,12 @@ tracks/4/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 0.647059, 0.65098, 0.12549, 1 ), Color( 0.807843, 0.0823529, 0.0823529, 1 ) ]
 }
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 size = 350
 font_data = ExtResource( 4 )
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 3 )
-
-[node name="GameTimer" type="Timer" parent="."]
 
 [node name="PlayerOneToolbox" type="VBoxContainer" parent="."]
 margin_right = 250.0
@@ -91,27 +89,18 @@ __meta__ = {
 [node name="WeaponSword" parent="PlayerOneToolbox" instance=ExtResource( 1 )]
 margin_top = 161.0
 margin_bottom = 411.0
-Repair = 10
-Damage = 5
-Spoil = 18
 WeaponName = "W1"
 
 [node name="WeaponBat" parent="PlayerOneToolbox" instance=ExtResource( 1 )]
 margin_top = 415.0
 margin_bottom = 665.0
 Weapon = 2
-Repair = 8
-Damage = 4
-Spoil = 15
 WeaponName = "W2"
 
 [node name="WeaponPunch" parent="PlayerOneToolbox" instance=ExtResource( 1 )]
 margin_top = 669.0
 margin_bottom = 919.0
 Weapon = 3
-Repair = 6
-Damage = 2
-Spoil = 10
 WeaponName = "W3"
 
 [node name="PlayerTwoToolbox" type="VBoxContainer" parent="."]
@@ -127,9 +116,6 @@ __meta__ = {
 margin_top = 161.0
 margin_bottom = 411.0
 Player = 2
-Repair = 10
-Damage = 5
-Spoil = 18
 WeaponName = "W1"
 
 [node name="WeaponBat" parent="PlayerTwoToolbox" instance=ExtResource( 1 )]
@@ -137,9 +123,6 @@ margin_top = 415.0
 margin_bottom = 665.0
 Player = 2
 Weapon = 2
-Repair = 8
-Damage = 4
-Spoil = 15
 WeaponName = "W2"
 
 [node name="WeaponPunch" parent="PlayerTwoToolbox" instance=ExtResource( 1 )]
@@ -147,9 +130,6 @@ margin_top = 669.0
 margin_bottom = 919.0
 Player = 2
 Weapon = 3
-Repair = 6
-Damage = 2
-Spoil = 10
 WeaponName = "W3"
 
 [node name="Arena" type="Node2D" parent="."]
@@ -165,9 +145,11 @@ position = Vector2( 989.288, 611.503 )
 rotation = -1.5708
 player = 2
 
+[node name="GameTimer" type="Timer" parent="."]
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 0.3
-anims/Start_Game = SubResource( 1 )
+anims/Start_Game = SubResource( 2 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -188,7 +170,7 @@ margin_right = 1301.0
 margin_bottom = 753.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color_shadow = Color( 0.74902, 0.623529, 0.054902, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 5
@@ -208,7 +190,7 @@ margin_right = 1209.0
 margin_bottom = 753.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color_shadow = Color( 0.74902, 0.623529, 0.054902, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 5
@@ -220,5 +202,6 @@ __meta__ = {
 }
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+volume_db = 24.0
 script = ExtResource( 5 )
 [connection signal="timeout" from="GameTimer" to="." method="_on_GameTimer_timeout"]

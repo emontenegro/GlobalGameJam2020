@@ -19,10 +19,10 @@
 [ext_resource path="res://Assets/Tleg_1.png" type="Texture" id=17]
 [ext_resource path="res://assets/test_images/barHorizontal_green_mid 200.png" type="Texture" id=18]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 261.041, 279.317 )
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=4]
 animations = [ {
 "frames": [ ExtResource( 17 ) ],
 "loop": true,
@@ -30,7 +30,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
 "frames": [ ExtResource( 17 ) ],
 "loop": true,
@@ -38,7 +38,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=6]
 resource_name = "Attack"
 length = 1.1
 loop = true
@@ -53,7 +53,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.3, 0.6, 0.8, 1.1 )
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("ArmR/Weapon/W1/FX1:visible")
+tracks/1/path = NodePath("ArmR/Weapon/W3/FX3:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -111,7 +111,7 @@ tracks/5/keys = {
 "values": [ false, true, false ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("ArmR/Weapon/W3/FX3:visible")
+tracks/6/path = NodePath("ArmR/Weapon/W1/FX1:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -135,7 +135,7 @@ tracks/7/keys = {
 "values": [ ExtResource( 16 ), ExtResource( 1 ), ExtResource( 16 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=7]
 resource_name = "SwapWeapon"
 length = 1.2
 step = 0.05
@@ -270,7 +270,7 @@ tracks/11/keys = {
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource( 8 )
 
 [node name="HealthBar" type="TextureProgress" parent="."]
 margin_left = -325.0
@@ -292,12 +292,12 @@ __meta__ = {
 
 [node name="LegL" type="AnimatedSprite" parent="Body"]
 position = Vector2( -71.1403, 124.009 )
-frames = SubResource( 2 )
+frames = SubResource( 4 )
 offset = Vector2( -19.8351, 33.4483 )
 
 [node name="LegR" type="AnimatedSprite" parent="Body"]
 position = Vector2( 65.3228, 115.845 )
-frames = SubResource( 3 )
+frames = SubResource( 5 )
 offset = Vector2( 38.4824, 41.6128 )
 flip_h = true
 
@@ -319,14 +319,15 @@ z_index = -2
 
 [node name="W1" type="Sprite" parent="Body/ArmR/Weapon"]
 visible = false
-position = Vector2( -28.238, -31.9826 )
-texture = ExtResource( 14 )
+position = Vector2( 0, 1.16635 )
+z_index = -2
+texture = ExtResource( 13 )
 offset = Vector2( 29.1588, -65.3156 )
 
 [node name="FX1" type="Sprite" parent="Body/ArmR/Weapon/W1"]
 visible = false
-modulate = Color( 0.454902, 0.498039, 0.560784, 1 )
-position = Vector2( 35.2816, -37.4677 )
+modulate = Color( 0.937255, 0.803922, 0.180392, 1 )
+position = Vector2( 7.04363, -70.6166 )
 rotation = 0.120021
 scale = Vector2( 1.00968, 0.990331 )
 texture = ExtResource( 15 )
@@ -334,7 +335,7 @@ offset = Vector2( 126.62, 68.3659 )
 
 [node name="W2" type="Sprite" parent="Body/ArmR/Weapon"]
 visible = false
-position = Vector2( -0.346039, -0.551514 )
+position = Vector2( -0.346008, -0.551498 )
 texture = ExtResource( 8 )
 offset = Vector2( -1.18867, -88.1525 )
 
@@ -349,15 +350,14 @@ offset = Vector2( 126.62, 68.3659 )
 
 [node name="W3" type="Sprite" parent="Body/ArmR/Weapon"]
 visible = false
-position = Vector2( 0, 1.16635 )
-z_index = -2
-texture = ExtResource( 13 )
+position = Vector2( -28.238, -31.9826 )
+texture = ExtResource( 14 )
 offset = Vector2( 29.1588, -65.3156 )
 
 [node name="FX3" type="Sprite" parent="Body/ArmR/Weapon/W3"]
 visible = false
-modulate = Color( 0.937255, 0.803922, 0.180392, 1 )
-position = Vector2( 7.04363, -70.6166 )
+modulate = Color( 0.454902, 0.498039, 0.560784, 1 )
+position = Vector2( 35.2816, -37.4677 )
 rotation = 0.120021
 scale = Vector2( 1.00968, 0.990331 )
 texture = ExtResource( 15 )
@@ -380,6 +380,6 @@ texture = ExtResource( 6 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Body"]
 autoplay = "idle"
-anims/Attack = SubResource( 4 )
-anims/SwapWeapon = SubResource( 5 )
+anims/Attack = SubResource( 6 )
+anims/SwapWeapon = SubResource( 7 )
 anims/idle = ExtResource( 5 )
