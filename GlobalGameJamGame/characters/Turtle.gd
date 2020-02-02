@@ -58,10 +58,8 @@ func _change_weapon(weapon: String, player: int, damage: int) -> void:
 
 func _on_Level1_player_hit(damage: int):
     current_health = current_health - damage
-    $HealthBar.value = current_health
-    print(current_health)
+    $Tween.interpolate_property($HealthBar, 'value', $HealthBar.value, current_health, 0.5)
+    $Tween.start()
     if current_health <= 0:
         emit_signal("player_dies", player)
     pass
-	$Tween.interpolate_property($HealthBar, 'value', $HealthBar.value, current_health, 0.5)
-	$Tween.start()

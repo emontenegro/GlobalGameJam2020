@@ -51,9 +51,9 @@ func do_repair() -> void:
     current_health = clamp(new_health, 0, 100)
     emit_signal("repair_weapon", WeaponName, current_health, Player)
     print_debug('Repair Weapon: '+ str(WeaponName) +' Curr: '+ str(current_health))
-	var HP = $Texture/HealthProgress
-	$Tween.interpolate_property(HP, 'value', HP.value, current_health, 1)
-	$Tween.start()
+    var HP = $Texture/HealthProgress
+    $Tween.interpolate_property(HP, 'value', HP.value, current_health, 1)
+    $Tween.start()
 
 func _on_change():
     if !is_destroyed:
@@ -65,7 +65,7 @@ func _on_change():
         
 
 func _on_stop_repair():
-	stop_repair()
+    stop_repair()
 
 func stop_repair():
     is_repearing = false
@@ -80,13 +80,13 @@ func _on_take_damage(damage: int):
     if is_active:
         var new_health = current_health - Spoil
         current_health = clamp(new_health, 0, 100)
+        var HP = $Texture/HealthProgress
+        $Tween.interpolate_property(HP, 'value', HP.value, current_health, 1)
+        $Tween.start()
         if current_health == 0:
             is_destroyed = true
             emit_signal("change_weapon", '', Player, 1)
             $Texture.texture = load(sprite_weapon_selected)
-		#$Texture/HealthProgress.value = current_health
-		$Tween.interpolate_property(HP, 'value', HP.value, current_health, 1)
-		$Tween.start()
 
 func set_image_w(tex: String):
     sprite_wapon = tex
