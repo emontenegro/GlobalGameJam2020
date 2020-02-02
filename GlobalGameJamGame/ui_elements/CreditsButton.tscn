@@ -1,12 +1,18 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://ui_elements/MenuButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/sprites/b_grande.png" type="Texture" id=2]
 
 [node name="CreditsButton" instance=ExtResource( 1 )]
 margin_right = 418.0
 margin_bottom = 62.0
 
-[node name="Label" parent="." index="0"]
+[node name="Sprite" type="Sprite" parent="." index="0"]
+position = Vector2( 185.66, 32.6574 )
+scale = Vector2( 0.7, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="Label" parent="." index="1"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5

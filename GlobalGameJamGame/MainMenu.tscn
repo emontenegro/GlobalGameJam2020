@@ -43,10 +43,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -180.0
-margin_top = -60.0
-margin_right = 180.0
-margin_bottom = 0.0
+margin_left = -177.842
+margin_top = -62.1586
+margin_right = 182.158
+margin_bottom = -2.15857
 script = ExtResource( 4 )
 next_scene_path = "res://end_game/credits.tscn"
 
