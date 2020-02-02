@@ -101,8 +101,8 @@ __meta__ = {
 [node name="WeaponSword" parent="PlayerOneToolbox" instance=ExtResource( 1 )]
 margin_top = 161.0
 margin_bottom = 411.0
-sprite_wapon = "res://assets/sprites/B_WEAPON_3.png"
-sprite_weapon = "res://assets/sprites/B_WEAPON_3b.png"
+sprite_wapon = "res://assets/sprites/B_WEAPON_1.png"
+sprite_weapon = "res://assets/sprites/B_WEAPON_1b.png"
 Repair = 8
 Damage = 7
 Spoil = 16
@@ -122,8 +122,8 @@ WeaponName = "W2"
 [node name="WeaponPunch" parent="PlayerOneToolbox" instance=ExtResource( 1 )]
 margin_top = 669.0
 margin_bottom = 919.0
-sprite_wapon = "res://assets/sprites/B_WEAPON_1.png"
-sprite_weapon = "res://assets/sprites/B_WEAPON_1b.png"
+sprite_wapon = "res://assets/sprites/B_WEAPON_3.png"
+sprite_weapon = "res://assets/sprites/B_WEAPON_3b.png"
 Weapon = 3
 Repair = 4
 Damage = 3
@@ -142,8 +142,8 @@ __meta__ = {
 [node name="WeaponSword" parent="PlayerTwoToolbox" instance=ExtResource( 1 )]
 margin_top = 161.0
 margin_bottom = 411.0
-sprite_wapon = "res://assets/sprites/B_WEAPON_3.png"
-sprite_weapon = "res://assets/sprites/B_WEAPON_3b.png"
+sprite_wapon = "res://assets/sprites/B_WEAPON_1.png"
+sprite_weapon = "res://assets/sprites/B_WEAPON_1b.png"
 Player = 2
 Repair = 8
 Damage = 7
@@ -165,8 +165,8 @@ WeaponName = "W2"
 [node name="WeaponPunch" parent="PlayerTwoToolbox" instance=ExtResource( 1 )]
 margin_top = 669.0
 margin_bottom = 919.0
-sprite_wapon = "res://assets/sprites/B_WEAPON_1.png"
-sprite_weapon = "res://assets/sprites/B_WEAPON_1b.png"
+sprite_wapon = "res://assets/sprites/B_WEAPON_3.png"
+sprite_weapon = "res://assets/sprites/B_WEAPON_3b.png"
 Player = 2
 Weapon = 3
 Repair = 4
