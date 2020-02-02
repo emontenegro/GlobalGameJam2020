@@ -7,11 +7,15 @@ export (int) var player
 onready var game_timer: Timer = owner.get_node('GameTimer')
 
 var current_health: int
+var is_finished = false
 
 func _ready():
     current_health = 100
+    $HealthBar.value = current_health
     game_timer.connect('timeout', self, '_on_Game_timeout')
     owner.connect('p'+str(player)+'damage', self, '_on_Level1_player_hit')
+    owner.connect('startgame', self, '_start_game')
+    owner.connect('endgame', self, '_end_game')
     if player == 1:
         for state_node in owner.get_node('PlayerOneToolbox').get_children():
             state_node.connect("change_weapon", self, "_change_weapon")
@@ -21,27 +25,38 @@ func _ready():
             
     hide_all_weapon()
     pass
+    
+func _start_game():
+    $Body/AnimationPlayer.play("Attack")    
+
+func _end_game():
+    $Body/AnimationPlayer.play("idle")
+    is_finished = true
 
 func _on_Game_timeout() -> void:
     
     pass
     
 func hide_all_weapon():
-    for node in get_node("ArmR/weapon").get_children():
+    for node in get_node("Body/ArmR/Weapon").get_children():
         node.hide()
 
 func _change_weapon(weapon: String, player: int) -> void:
-    hide_all_weapon()
-    if player == self.player:
-        if weapon != '':
-            get_node("ArmR/weapon"+"/"+weapon).show()
-        
+    if !is_finished:
+        hide_all_weapon()
+        if player == self.player:
+            if weapon != '':
+                get_node("Body/ArmR/Weapon/"+weapon).show()
+                $Body/AnimationPlayer.play("SwapWeapon")
+                yield($Body/AnimationPlayer,"animation_finished")
+                $Body/AnimationPlayer.play("Attack")  
     pass
 
 
 func _on_Level1_player_hit(damage: int):
     current_health = current_health - damage
     current_health = clamp(current_health, 0, 100)
+    $HealthBar.value = current_health
     print(current_health)
     if current_health <= 0:
         emit_signal("player_dies", player)

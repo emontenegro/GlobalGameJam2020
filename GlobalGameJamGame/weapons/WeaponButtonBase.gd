@@ -24,7 +24,7 @@ func _ready():
     owner.connect('p'+str(Player)+'damage', self, '_on_take_damage')
     owner.connect('p'+str(Player)+'wchanged', self, '_on_weapon_changed')
     
-    current_health = 20
+    current_health = 100
     $Texture/HealthProgress.value = current_health
 
 

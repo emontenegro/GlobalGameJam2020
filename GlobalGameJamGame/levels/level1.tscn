@@ -89,21 +89,21 @@ __meta__ = {
 margin_top = 161.0
 margin_bottom = 411.0
 Repair_Timeout = 5
-WeaponName = "WeaponSword"
+WeaponName = "W1"
 
 [node name="WeaponBat" parent="PlayerOneToolbox" instance=ExtResource( 1 )]
 margin_top = 415.0
 margin_bottom = 665.0
 Weapon = 2
 Repair_Timeout = 15
-WeaponName = "WeaponBat"
+WeaponName = "W2"
 
 [node name="WeaponPunch" parent="PlayerOneToolbox" instance=ExtResource( 1 )]
 margin_top = 669.0
 margin_bottom = 919.0
 Weapon = 3
 Repair_Timeout = 30
-WeaponName = "WeaponPunch"
+WeaponName = "W3"
 
 [node name="PlayerTwoToolbox" type="VBoxContainer" parent="."]
 margin_left = 1670.0
@@ -119,7 +119,7 @@ margin_top = 161.0
 margin_bottom = 411.0
 Player = 2
 Repair_Timeout = 5
-WeaponName = "WeaponSword"
+WeaponName = "W1"
 
 [node name="WeaponBat" parent="PlayerTwoToolbox" instance=ExtResource( 1 )]
 margin_top = 415.0
@@ -127,7 +127,7 @@ margin_bottom = 665.0
 Player = 2
 Weapon = 2
 Repair_Timeout = 15
-WeaponName = "WeaponBat"
+WeaponName = "W2"
 
 [node name="WeaponPunch" parent="PlayerTwoToolbox" instance=ExtResource( 1 )]
 margin_top = 669.0
@@ -135,24 +135,22 @@ margin_bottom = 919.0
 Player = 2
 Weapon = 3
 Repair_Timeout = 30
-WeaponName = "WeaponPunch"
+WeaponName = "W3"
 
 [node name="Arena" type="Node2D" parent="."]
 position = Vector2( 260, 0 )
 
 [node name="Player1" parent="Arena" instance=ExtResource( 2 )]
 position = Vector2( 299.484, 556.117 )
-scale = Vector2( 15, 15 )
+rotation = 1.5708
 player = 1
 
 [node name="Player2" parent="Arena" instance=ExtResource( 2 )]
 position = Vector2( 989.288, 611.503 )
-rotation = 3.14159
-scale = Vector2( 15, 15 )
+rotation = -1.5708
 player = 2
 
 [node name="GameTimer" type="Timer" parent="."]
-autostart = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 0.3

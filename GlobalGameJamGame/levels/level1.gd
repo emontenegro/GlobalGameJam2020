@@ -16,6 +16,9 @@ signal p2w2c
 signal p2w3c
 signal p2stop
 
+signal startgame
+signal endgame
+
 signal p1damage
 signal p2damage
 
@@ -29,6 +32,8 @@ func _ready():
     pass
 
 func start_game():
+    print('start game')
+    emit_signal("startgame")
     $GameTimer.start()
 
 func _input(event):
@@ -76,12 +81,12 @@ func _input(event):
         emit_signal("p2wchanged")
         emit_signal('p2w3c')
 
-
 func _on_GameTimer_timeout():
     emit_signal("p1damage", 10)
     emit_signal("p2damage", 10)
     pass
 
 func _end_game(player: int):
+    emit_signal("endgame")
     $GameTimer.stop()
     print('player: '+str(player)+' died.')
